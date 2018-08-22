@@ -58,11 +58,12 @@
 
   // label
   CGFloat topLayoutMargin = JDStatusBarRootVCLayoutMargin().top;
+  CGFloat textLabelHeight = _textLabel.font.lineHeight + 1;
   self.textLabel.frame = CGRectMake(0,
-                                    self.textVerticalPositionAdjustment + topLayoutMargin + 1,
+                                    self.bounds.size.height - textLabelHeight - 1,
                                     self.bounds.size.width,
-                                    self.bounds.size.height - topLayoutMargin - 1);
-
+                                    textLabelHeight);
+    
   // activity indicator
   if (_activityIndicatorView ) {
     CGSize textSize = [self currentTextSize];
